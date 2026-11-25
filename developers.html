@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build a storefront · RCM Commerce Docs</title><meta name="description" content="Connect a custom site to RCM Commerce, fetch a catalog, and hand checkout to the platform.">
+<link rel="icon" type="image/png" href="assets/rcm.png"><link rel="stylesheet" href="assets/docs.css">
+<script src="assets/docs.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="top"><nav class="top-inner" aria-label="Main navigation">
+<a class="brand" href="./"><img alt="" width="34" height="34" src="assets/rcm.png">RCM Commerce</a>
+<a class="top-link" href="getting-started.html">Store owners</a>
+<a class="top-link" href="developers.html" aria-current="true">Developers</a>
+<button class="search-open" type="button" aria-haspopup="dialog">Search <kbd>Ctrl K</kbd></button>
+<a class="button" href="https://realcitycommerce.com/login">Sign in</a>
+</nav></header>
+<main class="wrap page-grid" id="main"><nav class="sidebar" aria-label="Documentation"><h2>Store owners</h2><a href="getting-started.html">Get your store ready</a><a href="store-operations.html">Run your store</a><a href="collaborations.html">Showcase collaborations</a><a href="troubleshooting.html">Troubleshoot your setup</a><h2>Developers</h2><a href="developers.html" aria-current="page">Build a storefront</a><a href="api.html">Storefront API reference</a></nav>
+<article class="doc"><header class="page-title"><h1>Build a storefront</h1><p>Connect a custom site to RCM Commerce, fetch a catalog, and hand checkout to the platform.</p></header>
+<nav class="contents" aria-label="On this page"><a href="#keys">Get the origin and keys</a><a href="#catalog">Load a catalog</a><a href="#checkout">Send shoppers to hosted checkout</a><a href="#collaborations">Embed or design a showcase</a><a href="#extras">Add chat, pop-ups, or order lookup</a><a href="#sdk">Use the SDK when available</a></nav>
+<section id="keys"><h2>Get the origin and keys</h2><p>Ask the store owner for the API origin and full <strong>Website key</strong> from <strong>Settings → Website</strong>. The shared origin is <code>https://realcitycommerce.com</code>. Use <code>X-RCM-Key</code> on storefront API requests.</p><div class="table-wrap"><table><thead><tr><th scope="col">Key</th><th scope="col">Where to use it</th></tr></thead><tbody><tr><td><code>rcm_pk_…</code></td><td>Browser or server for public catalog, checkout, showcases and other storefront calls.</td></tr><tr><td><code>rcm_sk_…</code></td><td>Server environment only. Required for the order-list endpoint.</td></tr></tbody></table></div><aside class="tip"><strong>Keep key rotations coordinated</strong>Replacing a key revokes the old value immediately. Update the deployed integration with the new full value.</aside></section>
+<section id="catalog"><h2>Load a catalog</h2><div class="code"><div class="code-header"><span>JavaScript</span><button type="button" aria-label="Copy JavaScript example">Copy</button></div><pre><code>const api = &quot;https://realcitycommerce.com&quot;;
+const headers = { &quot;X-RCM-Key&quot;: &quot;rcm_pk_YOUR_WEBSITE_KEY&quot; };
+const response = await fetch(api + &quot;/v1/storefront/products?limit=24&quot;, { headers });
+if (!response.ok) throw new Error(&quot;Could not load products&quot;);
+const { products, total } = await response.json();
+const images = products.flatMap((p) =&gt; p.images.map((src) =&gt; new URL(src, api).href));</code></pre></div><p>The API returns Active products. Use collections for navigation and variant IDs for cart lines. Format amounts from integer cents and the store currency. For bilingual catalogs, pass <code>lang=fr</code> or <code>lang=en</code> on product requests. An untranslated field falls back to the store’s original text.</p></section>
+<section id="checkout"><h2>Send shoppers to hosted checkout</h2><div class="code"><div class="code-header"><span>JavaScript</span><button type="button" aria-label="Copy JavaScript example">Copy</button></div><pre><code>const checkout = await fetch(api + &quot;/v1/storefront/checkout&quot;, {
+  method: &quot;POST&quot;,
+  headers: { ...headers, &quot;Content-Type&quot;: &quot;application/json&quot; },
+  body: JSON.stringify({
+    items: [{ variantId: selectedVariantId, quantity: 1 }],
+    successUrl: location.origin + &quot;/thanks&quot;,
+    cancelUrl: location.origin + &quot;/cart&quot;,
+  }),
+});
+if (!checkout.ok) throw new Error(&quot;Checkout could not start&quot;);
+const { url, orderId } = await checkout.json();
+sessionStorage.setItem(&quot;rcm-checkout-order&quot;, orderId);
+location.assign(url);</code></pre></div><p>On return, use <code>GET /v1/storefront/checkout/{orderId}/confirm</code> and read <code>paid</code> and <code>status</code>. A success-page visit alone gives no payment confirmation. For pay-later orders, display the returned instructions when available. On cancellation, keep the cart so the customer can retry.</p></section>
+<section id="collaborations"><h2>Embed or design a showcase</h2><div class="code"><div class="code-header"><span>HTML</span><button type="button" aria-label="Copy HTML example">Copy</button></div><pre><code>&lt;rcm-collaborations data-key=&quot;rcm_pk_YOUR_WEBSITE_KEY&quot;
+  layout=&quot;grid&quot; heading=&quot;Selected work&quot;&gt;&lt;/rcm-collaborations&gt;
+&lt;script src=&quot;https://realcitycommerce.com/collaborations.js&quot; defer&gt;&lt;/script&gt;</code></pre></div><p>Use <code>grid</code>, <code>list</code> or <code>featured</code>. Load the script once per page. Set <code>section="Music"</code> to filter, <code>lang="fr"</code> for French, or <code>heading=""</code> to hide the heading. The element occupies no space when disabled or empty.</p><div class="code"><div class="code-header"><span>CSS</span><button type="button" aria-label="Copy CSS example">Copy</button></div><pre><code>rcm-collaborations {
+  --rcm-collaboration-color: #20211e;
+  --rcm-collaboration-surface: #fff;
+  --rcm-collaboration-border: #d7d7cf;
+  --rcm-collaboration-radius: 0;
+  --rcm-collaboration-gap: 1.25rem;
+}
+rcm-collaborations::part(title) { font-weight: 650; }</code></pre></div><p>Other available variables control the font, image background, padding, and accent. For fully custom markup, fetch <code>GET /v1/storefront/collaborations</code> and render <code>id</code>, <code>title</code>, <code>company</code>, <code>image</code>, and <code>section</code> in your own components. Respect <code>enabled</code> and resolve image paths against the API origin.</p><aside class="tip"><strong>Content Security Policy</strong>If your site uses CSP, allow the API origin for the embed script, stylesheet and API connection. Allow the hosts that serve your collaboration images.</aside></section>
+<section id="extras"><h2>Add chat, pop-ups, or order lookup</h2><ul><li><strong>Chat</strong> loads with <code>&lt;script src="https://realcitycommerce.com/chat.js" data-key="rcm_pk_…" defer&gt;&lt;/script&gt;</code>. For a custom conversation interface, use the chat endpoints and keep conversation tokens scoped to the shopper.</li><li><strong>Pop-ups</strong> come from <code>GET /v1/storefront/popups</code>. Display upcoming or current events while the feature is enabled.</li><li><strong>Order lookup</strong> uses the customer’s reference plus the phone number or email on their order. Submit this in a request body to <code>POST /v1/storefront/orders/lookup</code> so the details stay out of the page URL.</li></ul></section>
+<section id="sdk"><h2>Use the SDK when available</h2><p>If your project has access to <code>@rcm/commerce</code>, it provides a typed wrapper around the same storefront API. The HTTP examples work with any frontend or server runtime that can make HTTPS requests.</p><div class="code"><div class="code-header"><span>TypeScript</span><button type="button" aria-label="Copy TypeScript example">Copy</button></div><pre><code>import { RcmCommerce } from &quot;@rcm/commerce&quot;;
+
+const rcm = new RcmCommerce({
+  apiUrl: &quot;https://realcitycommerce.com&quot;,
+  apiKey: &quot;rcm_pk_YOUR_WEBSITE_KEY&quot;,
+});
+const { products } = await rcm.products.list();
+const { enabled, collaborations } = await rcm.collaborations.list();</code></pre></div><p>See the <a href="api.html">API reference</a> for request fields, responses, and authentication.</p></section>
+</article></main>
+<footer><div class="wrap footer-inner"><span>RCM Commerce by Real City Media</span><div class="footer-links">
+<a href="https://realcitymedia.com">Contact</a><a href="https://github.com/lilman514/rcm-commerce-docs/wiki">GitHub Wiki</a></div></div></footer>
+<dialog id="search" aria-label="Search the guides"><div class="search-bar"><input type="search" aria-label="Search the guides" placeholder="Search products, checkout, API…"><form method="dialog"><button class="button">Close</button></form></div><ul class="search-results" aria-live="polite"></ul></dialog>
+</body></html>

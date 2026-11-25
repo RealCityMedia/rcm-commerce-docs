@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Get your store ready",
+    "summary": "Sign in, set up your catalog and checkout, and run through a customer order before launch.",
+    "section": "Store owners",
+    "url": "getting-started.html"
+  },
+  {
+    "title": "Sign in",
+    "summary": "Open your invitation and use the email your store was set up with. If the link asks you to create an account or enter a one-time code, follow it and verify your email. Sign in on your store’s dashboard address. If you use the shared platform, open RCM Commerce sign-in . Open Settings → General and check your store name, contact information, business address, and time zone. Use the email on your invitation If your account opens without a store, ask the person who invited you to confirm which address they used.",
+    "section": "Get your store ready",
+    "url": "getting-started.html#sign-in"
+  },
+  {
+    "title": "Add your first products",
+    "summary": "Open Products → Add product . Start with a recognizable name, clear photos, and a short description explaining what’s included. Give each sellable option its own variant, such as Small or Large. Check the price and stock for every variant. Use inventory tracking for stock you physically count. Group products in Products → Collections . Use the names shoppers will look for, like Tees or New arrivals. Keep products in Draft until you’re ready. Switch them to Active to let a connected website show them. Start with one product Check its image, size options, price, stock, and collection on the actual website before entering the whole catalog.",
+    "section": "Get your store ready",
+    "url": "getting-started.html#catalog"
+  },
+  {
+    "title": "Configure checkout",
+    "summary": "Open Settings → Payments and use the Stripe connection offered for your store. Verify the dashboard shows card payments are ready before taking real payments. Set your delivery regions, shipping rates, and pickup locations under Settings → Shipping and delivery . Review tax settings with the person who handles your store’s taxes. Fill in Settings → Policies and Settings → Notifications . Check what shoppers will see on the checkout page and in the order email. Review Settings → Checkout for contact fields, payment methods and whether online checkout is paused.",
+    "section": "Get your store ready",
+    "url": "getting-started.html#checkout"
+  },
+  {
+    "title": "Walk through a test order",
+    "summary": "Use a test store or test payment setup. Open the website in a private window and start from a product page. Pick a variant, add it to the cart, and check shipping, taxes and the final total at checkout. Complete the test payment. Find the order in Orders and confirm the order status and stock change. Test the confirmation email and, if you ship orders, fulfillment and tracking. Try the same flow on a phone. Next, see Run your store for everyday orders and inventory.",
+    "section": "Get your store ready",
+    "url": "getting-started.html#launch"
+  },
+  {
+    "title": "Run your store",
+    "summary": "Keep products current, ship and track orders, and check the settings customers see.",
+    "section": "Store owners",
+    "url": "store-operations.html"
+  },
+  {
+    "title": "Update products and inventory",
+    "summary": "Open a product to change its description, images, or options. Review every variant after adding sizes or colours. Use Inventory to record counts and stock adjustments, and Collections to reorganize the storefront. Status Use it for Draft Work in progress or a future release. Active An item ready for a connected storefront to display. Archived An older product you want to retain in the dashboard. Check the storefront after product changes A connected site may cache catalog responses. Refresh the page and verify that the product is Active and in the intended collection.",
+    "section": "Run your store",
+    "url": "store-operations.html#products"
+  },
+  {
+    "title": "Process and fulfill orders",
+    "summary": "Open Orders and read the payment and fulfillment status. A pending manual payment may require confirmation before shipping. Check the customer’s delivery or pickup details and line items. Pack the items before recording fulfillment. For shipments, enter the carrier and tracking information. If the order needs multiple shipments, fulfill the items included in each one. For returns or cancellations, open the order and use its available refund or cancellation action. Review the amount, notification, and restock choice before confirming.",
+    "section": "Run your store",
+    "url": "store-operations.html#orders"
+  },
+  {
+    "title": "Check payments, shipping, and messages",
+    "summary": "Use Payments to review available Stripe activity. Check connection status under Settings → Payments if customers cannot pay online. Change pickup or shipping under Settings → Shipping and delivery . Test a typical checkout address after changing a zone or rate. Use Messages to reply to conversations from your connected website. See website integrations if your site needs a chat widget.",
+    "section": "Run your store",
+    "url": "store-operations.html#payments"
+  },
+  {
+    "title": "Invite staff",
+    "summary": "Use Settings → Team to manage access for the people who help run your store. Review their role when they join and remove access when they leave. The owner controls settings like website key replacement and public collaboration visibility.",
+    "section": "Run your store",
+    "url": "store-operations.html#team"
+  },
+  {
+    "title": "Showcase collaborations",
+    "summary": "Build a portfolio of past work, preview it, and connect it to your website whenever you are ready.",
+    "section": "Store owners",
+    "url": "collaborations.html"
+  },
+  {
+    "title": "Create an entry",
+    "summary": "Open Products → Collaborations → Add collaboration . Enter a product or project name, the company it was made for, and an image. Upload a photo or paste its full image URL. To group related entries, give them the same Subsection name. Leave it blank for entries that only need the main showcase. Use Storefront preview to check the image and text before saving. The entry is a portfolio piece with no checkout controls. Choose an image you have permission to show Use a clear photograph or product mockup with room around the subject. Check the preview for long names or narrow photos.",
+    "section": "Showcase collaborations",
+    "url": "collaborations.html#create"
+  },
+  {
+    "title": "Choose how it looks",
+    "summary": "Layout What visitors see Grid Equal photo cards across a responsive grid. List A compact row per collaboration with the image beside the text. Featured A larger first entry, followed by a grid. The newest entry comes first. Custom frontend Your developer uses the API to build the layout and interactions. Open Settings → Website → Collaboration layouts , select a preset and copy the embed. Replace the example value with your full Website key and add the code to an HTML block where the showcase belongs. For colours, fonts, subsection filters and a custom design, see the collaboration integration guide .",
+    "section": "Showcase collaborations",
+    "url": "collaborations.html#display"
+  },
+  {
+    "title": "Hide or publish the showcase",
+    "summary": "Leave the switch off in Settings → General → Collaborations while you prepare your entries. When the website is connected and you are ready, enable Show Collaboration on your website and save. Visit the website in a private window. Check that your entries and images appear as intended. Turning the switch off keeps your entries in the dashboard and hides the preset. A custom frontend should check the API’s enabled flag before showing its showcase.",
+    "section": "Showcase collaborations",
+    "url": "collaborations.html#visibility"
+  },
+  {
+    "title": "Troubleshoot your setup",
+    "summary": "Quick checks for sign-in, missing products, payments, embeds, and storefront requests.",
+    "section": "Store owners",
+    "url": "troubleshooting.html"
+  },
+  {
+    "title": "Sign-in and access",
+    "summary": "My invitation opens the wrong account Sign out and open the invitation in a private window. Enter the email address the invitation was sent to. If it has expired or the address has changed, ask your store owner to confirm access. My settings are read-only Check your role in the store. Owners manage store-wide settings such as keys and the showcase switch.",
+    "section": "Troubleshoot your setup",
+    "url": "troubleshooting.html#access"
+  },
+  {
+    "title": "Products, checkout, and shipments",
+    "summary": "A product is missing from my site Make sure the product is Active, assigned to the collection the website uses, and available under its intended variant. Ask your developer to confirm the website uses the correct store key and to check cache freshness. Customers cannot complete checkout Check the checkout pause switch, Stripe connection status, and whether shipping or pickup is available for the customer’s address. Repeat the flow on a test storefront and record the exact error. A customer cannot look up their order Confirm the reference and the email or phone number originally used. Check the tracking number in the dashboard if the parcel is already shipped.",
+    "section": "Troubleshoot your setup",
+    "url": "troubleshooting.html#storefront"
+  },
+  {
+    "title": "Embeds and API requests",
+    "summary": "The collaboration embed is empty Check the visibility switch, at least one saved entry, the full publishable key, and any subsection filter. A site builder may require a custom HTML block that permits scripts. A Content Security Policy must allow requests to the RCM origin. An image does not load Verify the image URL responds and can be shown on another website, or upload the image through the dashboard. Developers should resolve paths starting with /media/ against the RCM API origin. My integration returns 401 or 403 Check the API origin and full X-RCM-Key . A rotated key stops working immediately. Server-only operations require a server key and belong on your backend. When asking for help Include the store name, time of the issue, page URL, operation, and the exact message. Keep full keys and shopper details out of screenshots and support posts. Contact Real City Media if the issue persists.",
+    "section": "Troubleshoot your setup",
+    "url": "troubleshooting.html#integrations"
+  },
+  {
+    "title": "Build a storefront",
+    "summary": "Connect a custom site to RCM Commerce, fetch a catalog, and hand checkout to the platform.",
+    "section": "Developers",
+    "url": "developers.html"
+  },
+  {
+    "title": "Get the origin and keys",
+    "summary": "Ask the store owner for the API origin and full Website key from Settings → Website . The shared origin is https://realcitycommerce.com . Use X-RCM-Key on storefront API requests. Key Where to use it rcm_pk_… Browser or server for public catalog, checkout, showcases and other storefront calls. rcm_sk_… Server environment only. Required for the order-list endpoint. Keep key rotations coordinated Replacing a key revokes the old value immediately. Update the deployed integration with the new full value.",
+    "section": "Build a storefront",
+    "url": "developers.html#keys"
+  },
+  {
+    "title": "Load a catalog",
+    "summary": "JavaScript Copy const api = \"https://realcitycommerce.com\"; const headers = { \"X-RCM-Key\": \"rcm_pk_YOUR_WEBSITE_KEY\" }; const response = await fetch(api + \"/v1/storefront/products?limit=24\", { headers }); if (!response.ok) throw new Error(\"Could not load products\"); const { products, total } = await response.json(); const images = products.flatMap((p) => p.images.map((src) => new URL(src, api).href)); The API returns Active products. Use collections for navigation and variant IDs for cart lines. Format amounts from integer cents and the store currency. For bilingual catalogs, pass lang=fr or lang=en on product requests. An untranslated field falls back to the store’s original text.",
+    "section": "Build a storefront",
+    "url": "developers.html#catalog"
+  },
+  {
+    "title": "Send shoppers to hosted checkout",
+    "summary": "JavaScript Copy const checkout = await fetch(api + \"/v1/storefront/checkout\", { method: \"POST\", headers: { ...headers, \"Content-Type\": \"application/json\" }, body: JSON.stringify({ items: [{ variantId: selectedVariantId, quantity: 1 }], successUrl: location.origin + \"/thanks\", cancelUrl: location.origin + \"/cart\", }), }); if (!checkout.ok) throw new Error(\"Checkout could not start\"); const { url, orderId } = await checkout.json(); sessionStorage.setItem(\"rcm-checkout-order\", orderId); location.assign(url); On return, use GET /v1/storefront/checkout/{orderId}/confirm and read paid and status . A success-page visit alone gives no payment confirmation. For pay-later orders, display the returned instructions when available. On cancellation, keep the cart so the customer can retry.",
+    "section": "Build a storefront",
+    "url": "developers.html#checkout"
+  },
+  {
+    "title": "Embed or design a showcase",
+    "summary": "HTML Copy <rcm-collaborations data-key=\"rcm_pk_YOUR_WEBSITE_KEY\" layout=\"grid\" heading=\"Selected work\"></rcm-collaborations> <script src=\"https://realcitycommerce.com/collaborations.js\" defer></script> Use grid , list or featured . Load the script once per page. Set section=\"Music\" to filter, lang=\"fr\" for French, or heading=\"\" to hide the heading. The element occupies no space when disabled or empty. CSS Copy rcm-collaborations { --rcm-collaboration-color: #20211e; --rcm-collaboration-surface: #fff; --rcm-collaboration-border: #d7d7cf; --rcm-collaboration-radius: 0; --rcm-collaboration-gap: 1.25rem; } rcm-collaborations::part(title) { font-weight: 650; } Other available variables control the font, image background, padding, and accent. For fully custom markup, fetch GET /v1/storefront/collaborations and render id , title , company , image , and section in your own components. Respect enabled and resolve image paths against the API origin. Content Security Policy If your site uses CSP, allow the API origin for the embed script, stylesheet and API connection. Allow the hosts that serve your collaboration images.",
+    "section": "Build a storefront",
+    "url": "developers.html#collaborations"
+  },
+  {
+    "title": "Add chat, pop-ups, or order lookup",
+    "summary": "Chat loads with <script src=\"https://realcitycommerce.com/chat.js\" data-key=\"rcm_pk_…\" defer></script> . For a custom conversation interface, use the chat endpoints and keep conversation tokens scoped to the shopper. Pop-ups come from GET /v1/storefront/popups . Display upcoming or current events while the feature is enabled. Order lookup uses the customer’s reference plus the phone number or email on their order. Submit this in a request body to POST /v1/storefront/orders/lookup so the details stay out of the page URL.",
+    "section": "Build a storefront",
+    "url": "developers.html#extras"
+  },
+  {
+    "title": "Use the SDK when available",
+    "summary": "If your project has access to @rcm/commerce , it provides a typed wrapper around the same storefront API. The HTTP examples work with any frontend or server runtime that can make HTTPS requests. TypeScript Copy import { RcmCommerce } from \"@rcm/commerce\"; const rcm = new RcmCommerce({ apiUrl: \"https://realcitycommerce.com\", apiKey: \"rcm_pk_YOUR_WEBSITE_KEY\", }); const { products } = await rcm.products.list(); const { enabled, collaborations } = await rcm.collaborations.list(); See the API reference for request fields, responses, and authentication.",
+    "section": "Build a storefront",
+    "url": "developers.html#sdk"
+  },
+  {
+    "title": "Storefront API reference",
+    "summary": "Browse the public integration endpoints, authentication rules, and response conventions.",
+    "section": "Developers",
+    "url": "api.html"
+  },
+  {
+    "title": "Base URL and authentication",
+    "summary": "Requests use https://realcitycommerce.com/v1/storefront or the API origin supplied by your store owner. Include the full publishable key in X-RCM-Key . The order-list operation requires a server key. Shell Copy curl \"https://realcitycommerce.com/v1/storefront/products?limit=10\" \\ -H \"X-RCM-Key: rcm_pk_YOUR_WEBSITE_KEY\" Send Content-Type: application/json with request bodies. Amounts ending in Cents are integers. Resolve image paths against the API origin. Path parameters in braces must be replaced with URL-encoded values.",
+    "section": "Storefront API reference",
+    "url": "api.html#overview"
+  },
+  {
+    "title": "Store and catalog",
+    "summary": "GET /store Returns the connected store’s id , slug , name , currency , email and phone . GET /products Returns { products, total } . Optional query fields include collection (slug), q , tag , sort ( newest , price_asc , price_desc , title ), limit , offset and lang ( en or fr ). Use variant IDs, integer-cent prices and stock availability in your product interface. GET /products/{slug} Returns { product } for an Active product in the store. Accepts lang . A missing or unpublished slug returns 404 . GET /collections Returns { collections } . Each includes its slug, title, description, image and active product count. GET /availability Returns salesEnabled , paused , testMode , message , and stripe . Use this to determine whether card sales are ready. A non-null stripe may supply a publishable key for supported custom payment integrations.",
+    "section": "Storefront API reference",
+    "url": "api.html#catalog"
+  },
+  {
+    "title": "Checkout and orders",
+    "summary": "POST /checkout Requires items with variantId and quantity , plus absolute successUrl and cancelUrl . customerEmail is optional. Returns 201 with orderId , number , reference , hosted url , and mock . GET / POST /checkout/{orderId}/confirm Returns paid , status , reference , paymentMethod , paymentLabel , instructions , totalCents , and currency . Use the order ID from checkout. Some manual payments remain pending. POST /orders Submits an order or quote in a quote-enabled integration. Send items and at least one of email or contactPhone . Also accepts contactName , contactAddress , notes , fulfilment ( pickup or delivery ), and paymentMethod ( card or terms ). Returns 201 with { order } . Use hosted checkout for standard online payment. POST /orders/lookup Send { reference, contact } . The contact must match the phone or email on the order. Returns { order } , including shipments and tracking when present. GET /orders Requires the server key. Returns { orders } with up to the 100 most recent orders. Keep this operation and the returned customer information on your server.",
+    "section": "Storefront API reference",
+    "url": "api.html#payments"
+  },
+  {
+    "title": "Showcases and pop-ups",
+    "summary": "GET /collaborations Returns { enabled, collaborations } . Entries contain id , title , company , image , and section . Disabled showcases return an empty array. Sort order is newest first. GET /popups Returns { enabled, popups } with published current or upcoming events when enabled. Each event includes its name, dates, location and display details.",
+    "section": "Storefront API reference",
+    "url": "api.html#content"
+  },
+  {
+    "title": "Contact and chat",
+    "summary": "POST /contact Send name , email , and message . An order reference is optional. A successful submission returns { ok: true } . GET /chat Returns { store: { name } } for the connected store. POST /chat/conversations Send email and message with optional name and orderReference . Returns the customer’s conversation, message, access token, and hosted chat URL. GET /chat/conversations/{id} Use the website key and the conversation access token in X-RCM-Chat-Token . Optional after returns only newer messages. Optional peek=1 checks without marking the conversation seen. POST /chat/conversations/{id}/messages Use the website key and conversation token. Send { message } . Returns the saved message with 201 .",
+    "section": "Storefront API reference",
+    "url": "api.html#messaging"
+  },
+  {
+    "title": "Errors and testing",
+    "summary": "Errors generally return a JSON object with an error message. Check the HTTP status before reading a success payload. 400 means a field was missing or invalid. Check the request shape and show actionable feedback. 401 means the expected key or token was missing, invalid, or revoked. 403 means the operation needs different credentials or access is restricted. 404 means the item is missing, unpublished, or unavailable to the request. 429 means too many requests. Wait before retrying. 5xx means the service could not complete the request. A retry is safest for GET operations. Check for an existing order before submitting a failed write again. Test with a development or test store, sample orders and test payment methods. Account management, catalog editing and payment-provider setup are available in the owner dashboard.",
+    "section": "Storefront API reference",
+    "url": "api.html#errors"
+  }
+]

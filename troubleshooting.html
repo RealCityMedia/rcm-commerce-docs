@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshoot your setup · RCM Commerce Docs</title><meta name="description" content="Quick checks for sign-in, missing products, payments, embeds, and storefront requests.">
+<link rel="icon" type="image/png" href="assets/rcm.png"><link rel="stylesheet" href="assets/docs.css">
+<script src="assets/docs.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="top"><nav class="top-inner" aria-label="Main navigation">
+<a class="brand" href="./"><img alt="" width="34" height="34" src="assets/rcm.png">RCM Commerce</a>
+<a class="top-link" href="getting-started.html" aria-current="true">Store owners</a>
+<a class="top-link" href="developers.html">Developers</a>
+<button class="search-open" type="button" aria-haspopup="dialog">Search <kbd>Ctrl K</kbd></button>
+<a class="button" href="https://realcitycommerce.com/login">Sign in</a>
+</nav></header>
+<main class="wrap page-grid" id="main"><nav class="sidebar" aria-label="Documentation"><h2>Store owners</h2><a href="getting-started.html">Get your store ready</a><a href="store-operations.html">Run your store</a><a href="collaborations.html">Showcase collaborations</a><a href="troubleshooting.html" aria-current="page">Troubleshoot your setup</a><h2>Developers</h2><a href="developers.html">Build a storefront</a><a href="api.html">Storefront API reference</a></nav>
+<article class="doc"><header class="page-title"><h1>Troubleshoot your setup</h1><p>Quick checks for sign-in, missing products, payments, embeds, and storefront requests.</p></header>
+<nav class="contents" aria-label="On this page"><a href="#access">Sign-in and access</a><a href="#storefront">Products, checkout, and shipments</a><a href="#integrations">Embeds and API requests</a></nav>
+<section id="access"><h2>Sign-in and access</h2><details open><summary>My invitation opens the wrong account</summary><p>Sign out and open the invitation in a private window. Enter the email address the invitation was sent to. If it has expired or the address has changed, ask your store owner to confirm access.</p></details><details><summary>My settings are read-only</summary><p>Check your role in the store. Owners manage store-wide settings such as keys and the showcase switch.</p></details></section>
+<section id="storefront"><h2>Products, checkout, and shipments</h2><details open><summary>A product is missing from my site</summary><p>Make sure the product is Active, assigned to the collection the website uses, and available under its intended variant. Ask your developer to confirm the website uses the correct store key and to check cache freshness.</p></details><details><summary>Customers cannot complete checkout</summary><p>Check the checkout pause switch, Stripe connection status, and whether shipping or pickup is available for the customer’s address. Repeat the flow on a test storefront and record the exact error.</p></details><details><summary>A customer cannot look up their order</summary><p>Confirm the reference and the email or phone number originally used. Check the tracking number in the dashboard if the parcel is already shipped.</p></details></section>
+<section id="integrations"><h2>Embeds and API requests</h2><details open><summary>The collaboration embed is empty</summary><p>Check the visibility switch, at least one saved entry, the full publishable key, and any subsection filter. A site builder may require a custom HTML block that permits scripts. A Content Security Policy must allow requests to the RCM origin.</p></details><details><summary>An image does not load</summary><p>Verify the image URL responds and can be shown on another website, or upload the image through the dashboard. Developers should resolve paths starting with <code>/media/</code> against the RCM API origin.</p></details><details><summary>My integration returns 401 or 403</summary><p>Check the API origin and full <code>X-RCM-Key</code>. A rotated key stops working immediately. Server-only operations require a server key and belong on your backend.</p></details><aside class="tip"><strong>When asking for help</strong>Include the store name, time of the issue, page URL, operation, and the exact message. Keep full keys and shopper details out of screenshots and support posts.</aside><p>Contact <a href="https://realcitymedia.com">Real City Media</a> if the issue persists.</p></section>
+</article></main>
+<footer><div class="wrap footer-inner"><span>RCM Commerce by Real City Media</span><div class="footer-links">
+<a href="https://realcitymedia.com">Contact</a><a href="https://github.com/lilman514/rcm-commerce-docs/wiki">GitHub Wiki</a></div></div></footer>
+<dialog id="search" aria-label="Search the guides"><div class="search-bar"><input type="search" aria-label="Search the guides" placeholder="Search products, checkout, API…"><form method="dialog"><button class="button">Close</button></form></div><ul class="search-results" aria-live="polite"></ul></dialog>
+</body></html>

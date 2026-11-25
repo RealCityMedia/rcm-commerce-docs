@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Showcase collaborations · RCM Commerce Docs</title><meta name="description" content="Build a portfolio of past work, preview it, and connect it to your website whenever you are ready.">
+<link rel="icon" type="image/png" href="assets/rcm.png"><link rel="stylesheet" href="assets/docs.css">
+<script src="assets/docs.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="top"><nav class="top-inner" aria-label="Main navigation">
+<a class="brand" href="./"><img alt="" width="34" height="34" src="assets/rcm.png">RCM Commerce</a>
+<a class="top-link" href="getting-started.html" aria-current="true">Store owners</a>
+<a class="top-link" href="developers.html">Developers</a>
+<button class="search-open" type="button" aria-haspopup="dialog">Search <kbd>Ctrl K</kbd></button>
+<a class="button" href="https://realcitycommerce.com/login">Sign in</a>
+</nav></header>
+<main class="wrap page-grid" id="main"><nav class="sidebar" aria-label="Documentation"><h2>Store owners</h2><a href="getting-started.html">Get your store ready</a><a href="store-operations.html">Run your store</a><a href="collaborations.html" aria-current="page">Showcase collaborations</a><a href="troubleshooting.html">Troubleshoot your setup</a><h2>Developers</h2><a href="developers.html">Build a storefront</a><a href="api.html">Storefront API reference</a></nav>
+<article class="doc"><header class="page-title"><h1>Showcase collaborations</h1><p>Build a portfolio of past work, preview it, and connect it to your website whenever you are ready.</p></header>
+<nav class="contents" aria-label="On this page"><a href="#create">Create an entry</a><a href="#display">Choose how it looks</a><a href="#visibility">Hide or publish the showcase</a></nav>
+<section id="create"><h2>Create an entry</h2><ol><li>Open <strong>Products → Collaborations → Add collaboration</strong>.</li><li>Enter a product or project name, the company it was made for, and an image. Upload a photo or paste its full image URL.</li><li>To group related entries, give them the same <strong>Subsection</strong> name. Leave it blank for entries that only need the main showcase.</li><li>Use <strong>Storefront preview</strong> to check the image and text before saving. The entry is a portfolio piece with no checkout controls.</li></ol><aside class="tip"><strong>Choose an image you have permission to show</strong>Use a clear photograph or product mockup with room around the subject. Check the preview for long names or narrow photos.</aside></section>
+<section id="display"><h2>Choose how it looks</h2><div class="table-wrap"><table><thead><tr><th scope="col">Layout</th><th scope="col">What visitors see</th></tr></thead><tbody><tr><td>Grid</td><td>Equal photo cards across a responsive grid.</td></tr><tr><td>List</td><td>A compact row per collaboration with the image beside the text.</td></tr><tr><td>Featured</td><td>A larger first entry, followed by a grid. The newest entry comes first.</td></tr><tr><td>Custom frontend</td><td>Your developer uses the API to build the layout and interactions.</td></tr></tbody></table></div><p>Open <strong>Settings → Website → Collaboration layouts</strong>, select a preset and copy the embed. Replace the example value with your full <strong>Website key</strong> and add the code to an HTML block where the showcase belongs.</p><p>For colours, fonts, subsection filters and a custom design, see <a href="developers.html#collaborations">the collaboration integration guide</a>.</p></section>
+<section id="visibility"><h2>Hide or publish the showcase</h2><ol><li>Leave the switch off in <strong>Settings → General → Collaborations</strong> while you prepare your entries.</li><li>When the website is connected and you are ready, enable <strong>Show Collaboration on your website</strong> and save.</li><li>Visit the website in a private window. Check that your entries and images appear as intended.</li></ol><p>Turning the switch off keeps your entries in the dashboard and hides the preset. A custom frontend should check the API’s <code>enabled</code> flag before showing its showcase.</p></section>
+</article></main>
+<footer><div class="wrap footer-inner"><span>RCM Commerce by Real City Media</span><div class="footer-links">
+<a href="https://realcitymedia.com">Contact</a><a href="https://github.com/lilman514/rcm-commerce-docs/wiki">GitHub Wiki</a></div></div></footer>
+<dialog id="search" aria-label="Search the guides"><div class="search-bar"><input type="search" aria-label="Search the guides" placeholder="Search products, checkout, API…"><form method="dialog"><button class="button">Close</button></form></div><ul class="search-results" aria-live="polite"></ul></dialog>
+</body></html>
