@@ -4,4 +4,4 @@
 
 [Developer guide](Developer-guide)
 
-[API reference](https://lilman514.github.io/rcm-commerce-docs/api.html)
+[API reference](https://realcitymedia.github.io/rcm-commerce-docs/api.html)
